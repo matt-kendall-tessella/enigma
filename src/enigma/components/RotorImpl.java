@@ -1,23 +1,17 @@
 package enigma.components;
 
 import com.google.common.collect.BiMap;
-import com.google.common.collect.HashBiMap;
 import enigma.model.Letter;
 
-public class RotorImpl implements Rotor {
+public class RotorImpl extends HasWiringMap implements Rotor {
 
-    private static final char[] ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
-    private BiMap<Letter, Letter> wiringMap;
     private final Letter notchPosition;
     private Letter rotorPosition = new Letter('A');
     private Letter ringSetting = new Letter('A');
 
     public RotorImpl(char[] wiringOutputs, Letter notchPosition) {
         this.notchPosition = notchPosition;
-        wiringMap = HashBiMap.create();
-        for (int idx = 0; idx < ALPHABET.length; idx++) {
-            wiringMap.put(new Letter(ALPHABET[idx]), new Letter(wiringOutputs[idx]));
-        }
+        makeWiringMap(wiringOutputs);
     }
 
     @Override
