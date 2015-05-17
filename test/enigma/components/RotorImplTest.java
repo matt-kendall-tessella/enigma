@@ -28,7 +28,7 @@ public class RotorImplTest {
 
     @Test
     public void testEncodeAfterMove() throws Exception {
-        rotor.move();
+        rotor.rotate();
         assertEquals(rotor.encodeRightToLeft(new Letter('A')), new Letter('J'));
         assertEquals(rotor.encodeRightToLeft(new Letter('C')), new Letter('E'));
         assertEquals(rotor.encodeRightToLeft(new Letter('Z')), new Letter('D'));
@@ -53,7 +53,7 @@ public class RotorImplTest {
 
     @Test
     public void testReverseEncodeAfterMove() {
-        rotor.move();
+        rotor.rotate();
         assertEquals(rotor.encodeLeftToRight(new Letter('J')), new Letter('A'));
     }
 

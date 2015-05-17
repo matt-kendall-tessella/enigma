@@ -18,6 +18,6 @@ public interface Rotor {
 
     Letter getNotchPosition();
 
-    void move();
+    void rotate();
 
 }

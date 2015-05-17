@@ -73,7 +73,7 @@ public class RotorImpl extends HasWiringMap implements Rotor {
     }
 
     @Override
-    public void move() {
+    public void rotate() {
         rotorPosition = rotorPosition.add(1);
     }
 
